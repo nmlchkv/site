@@ -1,4 +1,4 @@
-
+/* Общие стили для страницы */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,25 +9,31 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
+    overflow: hidden;
 }
 
-.error-title {
-    font-size: 5rem;
-    margin: 0;
+/* Контейнер для текста */
+.container {
+    display: inline-block;
+    white-space: nowrap;
 }
 
-.error-message {
-    font-size: 1.5rem;
-    margin: 10px 0;
+/* Стили для отдельных букв */
+.letter {
+    display: inline-block;
+    font-size: 3rem;
+    animation: fall 2s ease-in-out infinite;
+    opacity: 0;
 }
 
-.home-link {
-    color: #4caf50;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.home-link:hover {
-    text-decoration: underline;
+/* Анимация падения букв */
+@keyframes fall {
+    0% {
+        transform: translateY(-200%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
 }

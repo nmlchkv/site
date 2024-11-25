@@ -1,66 +1,45 @@
-/* Общие стили для страницы */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+  background-color: #2c3e50;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Контейнер игры */
-.game-container {
-    position: relative;
-    width: 80%;
-    height: 70%;
-    background-color: #333;
-    border-radius: 10px;
-    overflow: hidden;
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-/* Персонаж */
-.character {
-    position: absolute;
-    bottom: 0;
-    left: 50px;
-    width: 40px;
-    height: 40px;
-    background-color: #ffcc00;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+#falling-text {
+  position: absolute;
+  font-size: 3rem;
+  display: flex;
+  gap: 10px;
 }
 
-/* Буквы */
-.letters {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    white-space: nowrap;
-    font-size: 3rem;
-    animation: moveLetters 5s linear infinite;
+#falling-text span {
+  position: relative;
+  animation: fall 3s linear infinite;
 }
 
-/* Анимация для движения букв */
-@keyframes moveLetters {
-    0% {
-        left: 100%;
-    }
-    100% {
-        left: -100%;
-    }
-}
-
-/* Стиль для текста "Game Over" */
-.game-over {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: red;
-    display: none;
+@keyframes fall {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 100vh;
+  }
 }

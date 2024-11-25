@@ -1,7 +1,14 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('404 Page Loaded');
-    const title = document.querySelector('.error-title');
-    title.style.transition = 'transform 1s ease-in-out';
-    title.style.transform = 'rotate(360deg)';
+    const text = "404 - Page Not Found";
+    const container = document.getElementById('text-container');
+
+    // Разделяем текст на буквы и создаём элементы
+    text.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.classList.add('letter');
+        // Задаём задержку для каждой буквы
+        span.style.animationDelay = `${index * 1}s`;
+        container.appendChild(span);
+    });
 });

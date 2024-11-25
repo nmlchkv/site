@@ -3,59 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falling Letters</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #121212;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .container {
-            display: inline-block;
-            white-space: nowrap;
-        }
-
-        .letter {
-            display: inline-block;
-            font-size: 3rem;
-            animation: fall 2s ease-in-out infinite;
-            opacity: 0;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-200%);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-    </style>
+    <title>404 - Page Not Found</title>
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="css/404.css">
 </head>
 <body>
-    <div class="container" id="text-container"></div>
+    <div class="container">
+        <h1 class="error-title">404</h1>
+        <p class="error-message">The page you're looking for cannot be found.</p>
+        <a href="/" class="home-link">Go back to Home</a>
+    </div>
 
-    <script>
-        const text = "404 - Page Not Found";
-        const container = document.getElementById('text-container');
-
-        // Split text into letters and create spans
-        text.split('').forEach((char, index) => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            span.classList.add('letter');
-            span.style.animationDelay = `${index * 0.1}s`; // Delay each letter
-            container.appendChild(span);
-        });
-    </script>
+    <!-- Подключение JavaScript -->
+    <script src="js/404.js"></script>
 </body>
 </html>

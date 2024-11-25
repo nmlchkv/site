@@ -1,6 +1,5 @@
 /* Общие стили для страницы */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212;
@@ -10,34 +9,58 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* Контейнер для текста */
-.container {
-    display: inline-block;
-    white-space: nowrap;
+/* Контейнер игры */
+.game-container {
     position: relative;
+    width: 80%;
+    height: 70%;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Персонаж */
+.character {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Буквы */
+.letters {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    white-space: nowrap;
     font-size: 3rem;
+    animation: moveLetters 5s linear infinite;
 }
 
-/* Стили для отдельных букв */
-.letter {
-    display: inline-block;
-    opacity: 0;
-    animation: fall 2s ease-in-out forwards;
-}
-
-/* Анимация падения букв */
-@keyframes fall {
+/* Анимация для движения букв */
+@keyframes moveLetters {
     0% {
-        transform: translateY(-100px); /* Начало падения сверху */
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(0); /* Падение к центру */
-        opacity: 1;
+        left: 100%;
     }
     100% {
-        transform: translateY(0); /* Остановка в центре */
+        left: -100%;
     }
+}
+
+/* Стиль для текста "Game Over" */
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: red;
+    display: none;
 }

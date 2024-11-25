@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         span.textContent = char;
         span.classList.add('letter');
         // Задаём задержку для каждой буквы
-        span.style.animationDelay = `${index * 1}s`;
+        span.style.animationDelay = `${index * 0.2}s`;
         container.appendChild(span);
     });
 });

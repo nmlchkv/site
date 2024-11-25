@@ -3,24 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>Falling Letters</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
+            margin: 0;
+            background: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
-        h1 {
-            font-size: 50px;
+
+        .container {
+            display: inline-block;
+            white-space: nowrap;
         }
-        p {
-            font-size: 20px;
+
+        .letter {
+            display: inline-block;
+            font-size: 3rem;
+            animation: fall 2s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-200%);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p>The page you are looking for does not exist.</p>
-    <a href="/">Return to Home</a>
+    <div class="container" id="text-container"></div>
+
+    <script>
+        const text = "404 - Page Not Found";
+        const container = document.getElementById('text-container');
+
+        // Split text into letters and create spans
+        text.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.classList.add('letter');
+            span.style.animationDelay = `${index * 0.1}s`; // Delay each letter
+            container.appendChild(span);
+        });
+    </script>
 </body>
 </html>

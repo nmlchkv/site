@@ -1,5 +1,3 @@
-// js/404.js
-
 let character = document.getElementById('character');
 let lettersContainer = document.getElementById('letters');
 let gameOverText = document.getElementById('game-over');

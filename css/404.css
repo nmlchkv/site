@@ -34,7 +34,6 @@ body {
   position: relative;
   animation: fall 3s linear infinite;
 }
-
 @keyframes fall {
   0% {
     top: -100px;
